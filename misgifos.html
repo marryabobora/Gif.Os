@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/style.css">
+    
+    <title>Sitio Gifs</title>
+
+</head>
+<body>
+    <!-- Fijarse si hay que cambiar el número por las visitas. -->
+    <div class="barra_bienvenidos"><p>¡Bienvenidos/as a Guifos.com! ------ Donde los gifs están.////// Número de visitas: 12.765.803</p></div>
+
+    <!-- Logo y botones crear gifs y elegir temas -->
+    <div class="div_menu">
+        
+        <a class="logo_shrine" href="index.html"><img src="assets/gifOF_logo.png" alt="Logo Gif.os" id="logo-gifos"></a>
+
+    <div class="botones">
+
+        <div>
+            <button class="crear_gifs"><span>Crear Guifos</span></button>
+        </div>
+
+        <div class="elegirsailor">
+
+            <input type="checkbox"  id="check"/>
+            
+            <div class="elegirtema_dropdown">
+           
+                <div>
+                    <button class="elegir_tema" >
+                    <span>Elegir tema</span></button>
+                    
+                </div>
+
+                <button class="dropdown"> <img src="assets/dropdown.svg" alt="flecha"> </button>
+           
+            </div>     
+            
+
+            <div class="elegirtemas">
+
+                <div><button class="sailordn" onclick="changeTheme(true);"  ><span>Sailor Day</span></button> </div>
+                <div><button class="sailordn" onclick="changeTheme(false);"><span>Sailor Night</span></button></div>
+
+            </div>
+        
+        </div>
+        
+
+        <a class="misgifos" href="misgifos.html"><span><span class="subrayado">M</span>is Guifos</span></a>
+
+    </div>
+
+    </div>
+
+
+	<!-- barra de sugestiones-->
+
+	<div class="sugestion"> Mis gifos </div>
+
+	<!-- gifs first row tendencias-->
+	<div id="gifs_container" class="tendencias_gif">
+
+	    <div id="gifs_template" class="ten_gif">
+	        <img id="gif" src="assets/imagem2.PNG" alt="imagentest" style="width: 100%; height: 100%;">
+	        <!--div class="hashtag_bar">
+	            <span id="hashtags">#hasgtags #text</span>
+	        </div-->
+	    </div>
+
+	</div>
+
+	<script src="script/gifOS.js"> </script>
+	<script src="script/giphy.js"> </script>
+
+	<script>
+
+		let uploadedGifs = [];
+		let myGifs = localStorage.getItem("myGifs");
+		if(myGifs) {
+			uploadedGifs = JSON.parse(myGifs);
+		}
+	    getRandomID(() => {
+	        getGifs(uploadedGifs, fillMyGifs);
+	    });
+	</script>
+</body>
+</html>

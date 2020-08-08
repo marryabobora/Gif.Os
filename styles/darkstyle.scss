@@ -1,0 +1,647 @@
+@import '_variables';
+
+* {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    text-decoration: none; 
+  }
+
+  
+  body {
+    background-color:$background_dark;
+
+
+
+      .barra_bienvenidos {
+          background-color:$background_dark;
+          width: 100%;
+          height: 19px;
+          font-family: $font-default;
+          font-size: 12px;
+          color: $color-default;
+          padding: 4px;
+          border-style: $outset_bar;
+          border-width: $width_bar;
+          border-color: $border_bar;
+          background-image: $gradient_color_dark;
+      }
+      /*Logo y botones crear gifs y elegir temas*/
+      .div_menu {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          height: 118px;
+
+          .volver {
+            margin-right: 20px;
+          }
+
+          .logo_shrine {
+              margin-left: 10vw;
+              margin-top: 35px;
+            
+          }
+
+          .botones {
+              display: flex;
+              flex-direction: row;
+              justify-content: end;
+              align-content: center;
+              margin-top: 44px;
+              justify-content: flex-end;
+              width: 60%;
+              margin-left: 140px;
+              color: $font-color-dark;
+
+
+            
+              .crear_gifs {
+                background-color: $button_normal_dark;
+                
+                font-size: $font_size_bar;
+                width: 144px;
+                height: 36px;
+                text-align: center;
+                text-decoration: none;
+                border-style: $outset_bar;
+                border-width: $width_bar;
+                border-color: $border_bar;
+                color: $font-color-dark;
+
+                  a{
+                    color: white;
+                  }
+                
+              }
+
+              .elegir_tema{
+                background-color: $button_normal_dark;
+                color: $font-color-dark;
+                font-size: $font_size_bar;
+                width: 131px;
+                height: 100%;
+                text-align: center;
+                text-decoration: none;
+                border-style: $outset_bar;
+                border-width: $width_bar;
+                border-color: $border_bar;
+                
+              }
+
+              .elegirsailor {
+                display: flex;
+                flex-direction: column;
+
+              }
+              .elegirtema_dropdown {
+                  display: flex;
+                  flex-direction: row;
+                  height: 36px;
+                  width: 160px;
+                  margin-left: 16px;
+                  
+              }
+
+              .activemenu {
+                padding: auto;
+
+              }
+
+
+
+              .elegirtemas {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: $barra_sailor;
+                width: 160px;
+                height: 100px;
+                margin-left: 16px;
+                z-index: 1;
+                position: relative;
+                transform: translateY(-500px);
+                
+              }
+              
+             #check{
+               position: absolute;            
+               width: 180px;
+               height: 31px;
+               opacity: 0;
+                             
+             }
+
+              input[type=checkbox] {
+                display: block;
+                  
+            
+                &:checked ~ .elegirtemas {
+                  transform: translateY(1px);
+                }
+                
+              
+              }
+              input {
+                  display: none;
+              }
+              
+              .elegir_tema:focus{
+                display: block;
+              }
+
+
+             .sailordn{
+              text-align: center;
+               text-decoration: none;
+               border-style: $outset_bar;
+               border-width: $width_bar;
+               border-color: $border_bar;
+               font-size: $button_fontsize;
+                width: 140px;
+                height: 36px;
+                text-align: center;
+                text-decoration: none;
+                padding: 5px;
+                margin-bottom: 5px;
+                margin-top: 5px;
+                background-color: $barra_sailor;
+                border-style: $outset_bar;
+                border-width: $width_bar;
+                border-color: $border_bar;
+             }
+                .sailordn:focus{
+                  background-color: $barra_button_night;
+                }
+
+              }      
+
+              .dropdown{
+                background-color: $button_normal_dark;
+                font-size: $button_fontsize;
+                width: 36px;
+                height: 100%;
+                text-decoration: none;
+                border-style: $outset_bar;
+                border-width: $width_bar;
+                border-color: $border_bar;
+                color: $font-color-dark;
+                justify-content: center;
+                
+              }
+
+              .crear_gifs:hover, .elegir_tema:hover, .dropdown:hover, #check{
+                border:1px $outset_bar;
+                outline: outset;
+                border-style: dotted;
+                border-color: $border_bar;
+                outline-color: $border_gif;
+                background-color: $button_active_dark;
+                }
+
+                .elegirtema_dropdown:hover  {
+                  border:0px $outset_bar;
+                  outline: outset;
+                  border-style: dotted;
+                  border-color: $border_bar;
+                  outline-color: $border_gif;
+                  background-color: $button_active_dark;
+                  }
+                  
+
+                 
+              .misgifos {
+                margin-top: 6px;
+                margin-left: 16px;
+                height: 16px;
+                color: $font-color-dark;
+
+                  .misgifos_active {
+                    color: $font-color-dark;
+                  }
+                  span {
+                    color: white;
+                  }
+              }
+
+              .misgifos:hover{
+                  border:1px $outset_bar;
+                  border-style: dotted;
+                  border-color: $border_bar;
+              }
+
+              span {
+                font-family: $font-default;
+                
+                .subrayado {
+                    text-decoration: underline;
+                }
+            }
+    
+          }
+
+          }
+
+
+
+         
+
+
+
+    /*barra de buscar y las tres opciones*/
+        .div_barrabuscar{
+            width: 80% ;
+            height: 99px;
+            background-color: $barra_sailor;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            margin: 0 auto;
+            font-size:$font_size_bar;
+            font-family: $font-default;
+            border: 1px solid;
+            border-color: $search_color;
+
+
+            .barra_ceniza {
+                background-color: $barra_sailor;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                margin-top: 12px;
+
+               
+                input {
+                    color: $search_color;
+                    font-size: $search_fontsize;
+                    padding-left: 3px;
+                    
+                }
+
+
+                .barra_campodebusqueda {
+                    width: 85%;
+                    height: 48px;
+                    background-color: $background_searchbar;
+                    border-style: none;
+                    border-style: $outset_bar;
+                    border-width: $width_bar;
+                    border-color: $border_bar;
+                }
+                .barra_boton {
+                    border-style: $outset_bar;
+                    border-width: $width_bar;
+                    border-color: $border_bar;
+                    width: 10%;
+                    height: 36px;
+                    margin-top: 7px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: $search_color;
+                    background-color: $barra_sailor_button;
+                    color: $button_font_disable;
+                    
+                    img {
+                      margin-right: 10px;
+                    }
+
+                    .buscar_active {
+                      color: black;
+                    }
+                              
+                }
+                .barra_boton:checked{
+                  background-color: $sugestionesbar;
+                }
+                
+
+                
+                    
+            }
+            .barra_cubo {
+                background-image: $gradient_color_dark;
+                color: $color-default;
+            
+                .font18branca {
+                    margin-left: 3px;
+                }
+            }
+        }
+        
+  
+
+ /*Botones de busqueda */
+
+ .botones-relacionados{
+  display: flex;
+  flex-direction: row; 
+  margin-top: 10px;
+  width: 80%;
+  justify-content: flex-start;
+  margin: 0 auto;
+
+  
+
+    button{
+      background-color:$barra_button_night;
+      padding: 5px 5px;
+      text-decoration: none;
+      font-size: $font_size_hashtag;
+      border: 1px solid ;
+      width: 10%;
+      margin-right: 0.8vw;
+      margin-top: 20px;
+      text-align: justify;
+      font-family: $font-default;
+      color: $color-default;
+      border-color: $sugestionesbar;
+      border-style: $outset_bar;
+      border-width: $width_bar;
+    }
+
+}
+
+    /*barra de sugestiones y tendencias*/
+  .sugestion {
+            width: 80% ;
+            height: 32px;
+            background-color: $color-default;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            margin: 0 auto;
+            margin-top: 5%;
+            font-family: $font-default;
+            font-size: 14px;
+            justify-content: space-around;
+            border: solid;
+            border-color: $sugestionesbar;
+            border-style: $outset_bar;
+          border-width: $width_bar;
+          
+  }
+
+  .buscador {
+    background-color: $search_color;
+    width: 80% ;
+    height: 150px;
+    background-color: $button_backgroundcolor;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0 auto;
+    font-size:$font_size_bar;
+    font-family: $font-default;
+    justify-content: space-around;
+    border-style: $outset_bar;
+    border-width: $width_bar;
+    border-color: $search_color;
+
+      button {
+        background-color:$button_backgroundcolor;
+        border: none;
+        padding: 5px 5px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border: 1px solid;
+        width: 85.5%;
+        margin-left: 0.8vw;
+        text-align: justify;
+        font-family: $font-default;
+        
+        
+      }
+  }
+
+  .div_sugestiones {
+    width: 80% ;
+    height: 282px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    margin: 0 auto;
+    margin-top: 18px;
+
+      .suges_gif{
+          width: 24%;
+          height: 100%;
+          border-style: $outset_bar;
+          border-width: $width_bar;
+          border-color: $border_bar;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;          
+          
+        
+          .barra_cubogif {
+            width: 100%;
+            height: 28px;
+            font-size: $font_size_bar;
+            background-image: $gradient_color_dark;
+            color: $color-default;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+
+          
+
+          .cerrar {
+            border-style: none;
+            background-color:transparent;
+            text-decoration: none;
+            margin-top: 2px;
+            margin-right: 2px;
+            
+            
+          }
+            .vermas {
+              display: flex;
+              flex-direction: row;
+              justify-self: flex-start;
+              text-align: center;
+              width: 30%;
+              height: 35px;
+              font-size: $vermassize;
+              margin-bottom: 10px;
+              margin-left: 5px;
+              font-size: $font-default;
+              padding-left: 10px;
+              
+            }
+
+          
+      }
+
+      .vermas {
+        background-color: $barra_button_night;
+        color: $color-default;
+        border-style: none;
+        padding: 4px;
+        border-color: $sugestionesbar;
+        border-style: $outset_bar;
+        border-width: $width_bar;
+        font-size: 14px;
+        position: absolute;
+        margin-top: 240px;
+
+      }
+      .suges_gif:hover     img {
+        border:1px $outset_bar;
+        outline: outset;
+        border-style: dotted;
+        border-color: $border_bar;
+        outline-color: $border_gif;
+        }
+
+        .suges_gif:hover     .vermas {
+          border:1px $outset_bar;
+          outline: outset;
+          border-style: dotted;
+          border-color: $border_bar;
+          outline-color: $border_gif;
+          }
+
+  }
+
+
+
+  .tendencias_gif {
+            width: 80% ;
+            height: 298px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-content: center;
+            margin: 0 auto;
+            margin-top: 18px;
+
+            .ten_gif {
+              width: 24%;
+              height: 100%;
+              display: flex;
+              align-items: flex-end;  
+              position: relative; 
+            }
+
+            .ten_gif2{
+              width: 49%;
+              height: 100%; 
+              position: relative;       
+            }
+
+            .ten_gif:hover{
+              border:1px $outset_bar;
+              outline: outset;
+              border-style: dotted;
+              border-color: $border_bar;
+              outline-color: $border_gif;
+            }
+            
+            .hashtag_bar {
+            width: 99.3%;
+            height: 11%;
+            font-size: $font_size_hashtag;
+            background-image: $gradient_color_dark;
+            color: $color-default;
+            margin-top: -40px;
+            padding-left: 2px;
+            position: absolute;
+            opacity: 0;
+            
+          
+            }
+
+        
+
+            .ten_gif:hover     .hashtag_bar {
+              opacity: 1;
+            }
+            
+
+
+
+  }
+  
+  /*crear gifos*/
+
+.div_crear{
+  height: 400px;
+  width: 50%;
+}
+
+.crearflex{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 80%;
+  padding-left: 2vw;
+  padding-top: 3vw;
+  padding-right: 2vw;
+  font-size: $font_crear2;
+  text-align: justify;
+
+    img {
+      margin-right: 30px;
+    }
+
+    .bold{
+      font-weight: bold;
+    }
+    .italic{
+      font-style: italic;
+    }
+
+}
+
+.div_crear2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  .bottoncrear{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:$button_normal_dark;
+    color: $font-color-dark;
+    font-size: $button_fontsize;
+    width: 144px;
+    height: 36px;
+    text-align: center;
+    text-decoration: none;
+    border-style: $outset_bar;
+    border-width: $width_bar;
+    border-color: $border_bar;
+    margin-right: 20px;
+    
+  }
+  
+  .bottoncrear:hover{
+    background-color: $button_active_dark;
+  }
+}
+
+.videograbando {
+  width: 100%;
+  
+}
+
+
+.subirgif {
+  text-align: center;
+  margin-top: 10%;
+  height: 250px;
+  
+  p {
+    text-align: center;
+    width: auto;
+    height: 180px;
+  }
+    
+}
+

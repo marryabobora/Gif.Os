@@ -1,0 +1,719 @@
+/*Border outset black */
+/*Botones*/
+/* letras blancas interiores */
+/* letra barra de busqueda */
+/* margin left 5 vw*/
+/* font dize*/
+/*dark*/
+* {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: #110038;
+  /*Logo y botones crear gifs y elegir temas*/
+}
+
+body .barra_bienvenidos {
+  background-color: #110038;
+  width: 100%;
+  height: 19px;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 12px;
+  color: #fff;
+  padding: 4px;
+  border-style: ridge;
+  border-width: 1px;
+  border-color: black;
+  background-image: -webkit-gradient(linear, right top, left top, from(#CC3CFD), to(#2E32FB));
+  background-image: linear-gradient(-90deg, #CC3CFD, #2E32FB);
+}
+
+body .div_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 118px;
+}
+
+body .div_menu .volver {
+  margin-right: 20px;
+}
+
+body .div_menu .logo_shrine {
+  margin-left: 10vw;
+  margin-top: 35px;
+}
+
+body .div_menu .botones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin-top: 44px;
+  justify-content: flex-end;
+  width: 60%;
+  margin-left: 140px;
+  color: white;
+}
+
+body .div_menu .botones .crear_gifs {
+  background-color: #EE3EFE;
+  font-size: 18px;
+  width: 144px;
+  height: 36px;
+  text-align: center;
+  text-decoration: none;
+  border-style: ridge;
+  border-width: 1px;
+  border-color: black;
+  color: white;
+}
+
+body .div_menu .botones .crear_gifs a {
+  color: white;
+}
+
+body .div_menu .botones .elegir_tema {
+  background-color: #EE3EFE;
+  color: white;
+  font-size: 18px;
+  width: 131px;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+  border-style: ridge;
+  border-width: 1px;
+  border-color: black;
+}
+
+body .div_menu .botones .elegirsailor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .div_menu .botones .elegirtema_dropdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 36px;
+  width: 160px;
+  margin-left: 16px;
+}
+
+body .div_menu .botones .activemenu {
+  padding: auto;
+}
+
+body .div_menu .botones .elegirtemas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #B4B4B4;
+  width: 160px;
+  height: 100px;
+  margin-left: 16px;
+  z-index: 1;
+  position: relative;
+  -webkit-transform: translateY(-500px);
+          transform: translateY(-500px);
+}
+
+body .div_menu .botones #check {
+  position: absolute;
+  width: 180px;
+  height: 31px;
+  opacity: 0;
+}
+
+body .div_menu .botones input[type=checkbox] {
+  display: block;
+}
+
+body .div_menu .botones input[type=checkbox]:checked ~ .elegirtemas {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+
+body .div_menu .botones input {
+  display: none;
+}
+
+body .div_menu .botones .elegir_tema:focus {
+  display: block;
+}
+
+body .div_menu .botones .sailordn {
+  text-align: center;
+  text-decoration: none;
+  border-style: ridge;
+  border-width: 1px;
+  border-color: black;
+  font-size: 16px;
+  width: 140px;
+  height: 36px;
+  text-align: center;
+  text-decoration: none;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  background-color: #B4B4B4;
+  border-style: ridge;
+  border-width: 1px;
+  border-color: black;
+}
+
+body .div_menu .botones .sailordn:focus {
+  background-color: #2E32FB;
+}
+
+body .div_menu .dropdown {
+  background-color: #EE3EFE;
+  font-size: 16px;
+  width: 36px;
+  height: 100%;
+  text-decoration: none;
+  border-style: ridge;
+  border-width: 1px;
+  border-color: black;
+  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .div_menu .crear_gifs:hover, body .div_menu .elegir_tema:hover, body .div_menu .dropdown:hover, body .div_menu #check {
+  border: 1px ridge;
+  outline: outset;
+  border-style: dotted;
+  border-color: black;
+  outline-color: #B4B4B4;
+  background-color: #CE36DB;
+}
+
+body .div_menu .elegirtema_dropdown:hover {
+  border: 0px ridge;
+  outline: outset;
+  border-style: dotted;
+  border-color: black;
+  outline-color: #B4B4B4;
+  background-color: #CE36DB;
+}
+
+body .div_menu .misgifos {
+  margin-top: 6px;
+  margin-left: 16px;
+  height: 16px;
+  color: white;
+}
+
+body .div_menu .misgifos .misgifos_active {
+  color: white;
+}
+
+body .div_menu .misgifos span {
+  color: white;
+}
+
+body .div_menu .misgifos:hover {
+  border: 1px ridge;
+  border-style: dotted;
+  border-color: black;
+}
+
+body .div_menu span {
+  font-family: "Chakra Petch", sans-serif;
+}
+
+body .div_menu span .subrayado {
+  text-decoration: underline;
+}
+
+/*barra de buscar y las tres opciones*/
+.div_barrabuscar {
+  width: 80%;
+  height: 99px;
+  background-color: #B4B4B4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 0 auto;
+  font-size: 18px;
+  font-family: "Chakra Petch", sans-serif;
+  border: 1px solid;
+  border-color: #B4B4B4;
+}
+
+.div_barrabuscar .barra_ceniza {
+  background-color: #B4B4B4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 12px;
+}
+
+.div_barrabuscar .barra_ceniza input {
+  color: #B4B4B4;
+  font-size: 16px;
+  padding-left: 3px;
+}
+
+.div_barrabuscar .barra_ceniza .barra_campodebusqueda {
+  width: 85%;
+  height: 48px;
+  background-color: #fff;
+  border-style: none;
+  border-style: ridge;
+  border-width: 1px;
+  border-color: black;
+}
+
+.div_barrabuscar .barra_ceniza .barra_boton {
+  border-style: ridge;
+  border-width: 1px;
+  border-color: black;
+  width: 10%;
+  height: 36px;
+  margin-top: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #B4B4B4;
+  background-color: #CCCCCC;
+  color: #AEAEAE;
+}
+
+.div_barrabuscar .barra_ceniza .barra_boton img {
+  margin-right: 10px;
+}
+
+.div_barrabuscar .barra_ceniza .barra_boton .buscar_active {
+  color: black;
+}
+
+.div_barrabuscar .barra_ceniza .barra_boton:checked {
+  background-color: #E6BBE2;
+}
+
+.div_barrabuscar .barra_cubo {
+  background-image: -webkit-gradient(linear, right top, left top, from(#CC3CFD), to(#2E32FB));
+  background-image: linear-gradient(-90deg, #CC3CFD, #2E32FB);
+  color: #fff;
+}
+
+.div_barrabuscar .barra_cubo .font18branca {
+  margin-left: 3px;
+}
+
+/*Botones de busqueda */
+.botones-relacionados {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 10px;
+  width: 80%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 0 auto;
+}
+
+.botones-relacionados button {
+  background-color: #2E32FB;
+  padding: 5px 5px;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid;
+  width: 10%;
+  margin-right: 0.8vw;
+  margin-top: 20px;
+  text-align: justify;
+  font-family: "Chakra Petch", sans-serif;
+  color: #fff;
+  border-color: #E6BBE2;
+  border-style: ridge;
+  border-width: 1px;
+}
+
+/*barra de sugestiones y tendencias*/
+.sugestion {
+  width: 80%;
+  height: 32px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 0 auto;
+  margin-top: 5%;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 14px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border: solid;
+  border-color: #E6BBE2;
+  border-style: ridge;
+  border-width: 1px;
+}
+
+.buscador {
+  background-color: #B4B4B4;
+  width: 80%;
+  height: 150px;
+  background-color: #E6E6E6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 0 auto;
+  font-size: 18px;
+  font-family: "Chakra Petch", sans-serif;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-style: ridge;
+  border-width: 1px;
+  border-color: #B4B4B4;
+}
+
+.buscador button {
+  background-color: #E6E6E6;
+  border: none;
+  padding: 5px 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 1px solid;
+  width: 85.5%;
+  margin-left: 0.8vw;
+  text-align: justify;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+.div_sugestiones {
+  width: 80%;
+  height: 282px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 0 auto;
+  margin-top: 18px;
+}
+
+.div_sugestiones .suges_gif {
+  width: 24%;
+  height: 100%;
+  border-style: ridge;
+  border-width: 1px;
+  border-color: black;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.div_sugestiones .suges_gif .barra_cubogif {
+  width: 100%;
+  height: 28px;
+  font-size: 18px;
+  background-image: -webkit-gradient(linear, right top, left top, from(#CC3CFD), to(#2E32FB));
+  background-image: linear-gradient(-90deg, #CC3CFD, #2E32FB);
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.div_sugestiones .suges_gif .cerrar {
+  border-style: none;
+  background-color: transparent;
+  text-decoration: none;
+  margin-top: 2px;
+  margin-right: 2px;
+}
+
+.div_sugestiones .suges_gif .vermas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-self: flex-start;
+  text-align: center;
+  width: 30%;
+  height: 35px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  font-size: "Chakra Petch", sans-serif;
+  padding-left: 10px;
+}
+
+.div_sugestiones .vermas {
+  background-color: #2E32FB;
+  color: #fff;
+  border-style: none;
+  padding: 4px;
+  border-color: #E6BBE2;
+  border-style: ridge;
+  border-width: 1px;
+  font-size: 14px;
+  position: absolute;
+  margin-top: 240px;
+}
+
+.div_sugestiones .suges_gif:hover img {
+  border: 1px ridge;
+  outline: outset;
+  border-style: dotted;
+  border-color: black;
+  outline-color: #B4B4B4;
+}
+
+.div_sugestiones .suges_gif:hover .vermas {
+  border: 1px ridge;
+  outline: outset;
+  border-style: dotted;
+  border-color: black;
+  outline-color: #B4B4B4;
+}
+
+.tendencias_gif {
+  width: 80%;
+  height: 298px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 0 auto;
+  margin-top: 18px;
+}
+
+.tendencias_gif .ten_gif {
+  width: 24%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
+}
+
+.tendencias_gif .ten_gif2 {
+  width: 49%;
+  height: 100%;
+  position: relative;
+}
+
+.tendencias_gif .ten_gif:hover {
+  border: 1px ridge;
+  outline: outset;
+  border-style: dotted;
+  border-color: black;
+  outline-color: #B4B4B4;
+}
+
+.tendencias_gif .hashtag_bar {
+  width: 99.3%;
+  height: 11%;
+  font-size: 14px;
+  background-image: -webkit-gradient(linear, right top, left top, from(#CC3CFD), to(#2E32FB));
+  background-image: linear-gradient(-90deg, #CC3CFD, #2E32FB);
+  color: #fff;
+  margin-top: -40px;
+  padding-left: 2px;
+  position: absolute;
+  opacity: 0;
+}
+
+.tendencias_gif .ten_gif:hover .hashtag_bar {
+  opacity: 1;
+}
+
+/*crear gifos*/
+.div_crear {
+  height: 400px;
+  width: 50%;
+}
+
+.crearflex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 80%;
+  height: 80%;
+  padding-left: 2vw;
+  padding-top: 3vw;
+  padding-right: 2vw;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.crearflex img {
+  margin-right: 30px;
+}
+
+.crearflex .bold {
+  font-weight: bold;
+}
+
+.crearflex .italic {
+  font-style: italic;
+}
+
+.div_crear2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.div_crear2 .bottoncrear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #EE3EFE;
+  color: white;
+  font-size: 16px;
+  width: 144px;
+  height: 36px;
+  text-align: center;
+  text-decoration: none;
+  border-style: ridge;
+  border-width: 1px;
+  border-color: black;
+  margin-right: 20px;
+}
+
+.div_crear2 .bottoncrear:hover {
+  background-color: #CE36DB;
+}
+
+.videograbando {
+  width: 100%;
+}
+
+.subirgif {
+  text-align: center;
+  margin-top: 10%;
+  height: 250px;
+}
+
+.subirgif p {
+  text-align: center;
+  width: auto;
+  height: 180px;
+}
+/*# sourceMappingURL=darkstyle.css.map */

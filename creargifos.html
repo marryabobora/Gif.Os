@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/style.css">
+    
+    <title>Sitio Gifs</title>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <style>        
+      .video-recording {
+        border: 5px solid red;
+      }
+    </style>
+</head>
+<body>
+    <!-- Fijarse si hay que cambiar el número por las visitas. -->
+    <div class="barra_bienvenidos"><p>¡Bienvenidos/as a Guifos.com! ------ Donde los gifs están.////// Número de visitas: 12.765.803</p></div>
+
+    <!-- Logo y botones crear gifs y elegir temas -->
+    <div class="div_menu">
+        
+        <a class="logo_shrine" href="index.html"><img src="assets/gifOF_logo.png" alt="Logo Gif.os" id="logo-gifos"></a>
+
+    <div class="botones">
+
+        <div>
+            <button class="crear_gifs"><span>Crear Guifos</span></button>
+        </div>
+
+        <div class="elegirsailor">
+
+            <input type="checkbox"  id="check"/>
+            
+            <div class="elegirtema_dropdown">
+           
+                <div>
+                    <button class="elegir_tema" >
+                    <span>Elegir tema</span></button>
+                    
+                </div>
+
+                <button class="dropdown"> <img src="assets/dropdown.svg" alt="flecha"> </button>
+           
+            </div>     
+            
+
+            <div class="elegirtemas">
+
+                <div><button class="sailordn" onclick="changeTheme(true);"  ><span>Sailor Day</span></button> </div>
+                <div><button class="sailordn" onclick="changeTheme(false);"><span>Sailor Night</span></button></div>
+
+            </div>
+        
+        </div>
+        
+
+        <a class="misgifos" href="misgifos.html"><span><span class="subrayado">M</span>is Guifos</span></a>
+
+    </div>
+
+    </div>
+
+ <!-- alert -->
+
+ <div class="div_barrabuscar div_crear">
+     
+    <div class="barra_cubo">
+        <span class="font18branca">Crear Guifos</span>
+    </div>
+
+    <div class="instrucciones" id="instrucciones" style="display:none;">
+        <div class="crearflex">
+
+            <div>
+                <img src="assets/window img.png" alt="windows">
+            </div>
+
+            <div class="subirgifostext">
+
+                <p class="bold font16">Aquí podrás crear tus proprios guifos</p><br>
+
+                <p class="normal">Crear tu <span class="bold italic">guifo</span> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos personalizados. Los pasoss para crear tu guifos son:  </p><br>
+
+                <ul>
+                    <li><p><span class="bold">1)</span> Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</p></li><br>
+                    <li><p><span class="bold">2)</span> Capturar tu momento guifo</p></li><br>
+                    <li><p><span class="bold">3)</span> Revisar el momento</p></li><br>
+                    <li><p><span class="bold">4)</span> Listo para subir y compartir!</p></li><br>
+                </ul>
+
+                <p>¿Quieres comenzar a crear tu<span class="bold italic"> guifo</span> ahora?</p>
+            </div>
+        </div>
+
+        <div class="div_crear2">
+
+            <div class="bottoncrear" id="boton_gifcancelar"><span>Cancelar</span></div>
+
+            <div class="bottoncrear" id="boton_gifcomenzar"><span>Comenzar</span></div>
+
+        </div>
+    </div>
+
+    <div class="grabargif" id="grabargif">
+        <video src="assets/gifex.png" alt="div ejemplo" width="auto" height="330px" id="img-video"></video>
+        <img src="assets/gifex.png" alt="div ejemplo" width="auto" height="330px" id="img-gif" hidden/>
+
+        <div class="div_crear2">
+            <div class="bottoncrear" id="boton_gif1">BOTON 1</div>
+            <div class="bottoncrear" id="boton_gif2">BOTON 2</div>
+            <div class="bottoncrear" id="boton_gif3">BOTON 3</div>
+        </div>
+    </div>
+
+    <div class="subirgif" id="subirgif">
+        <img src="assets/globe_img.png" alt="div ejemplo"/>
+        <p>Estamos subiendo tu gif...</p>
+
+        <div class="div_crear2">
+            <div class="bottoncrear" id="boton_subidacancelar">Cancelar</div>
+        </div>
+    </div>
+
+ </div>
+
+
+
+
+
+<!-- barra de sugestiones-->
+
+<div class="sugestion"> Mis gifos </div>
+
+<!-- gifs first row tendencias-->
+<div id="gifs_container" class="tendencias_gif">
+
+    <div id="gifs_template" class="ten_gif">
+        <img id="gif" src="assets/imagem2.PNG" alt="imagentest" style="width: 100%; height: 100%;">
+        <!--div class="hashtag_bar">
+            <span id="hashtags">#hasgtags #text</span>
+        </div-->
+    </div>
+
+</div>
+
+<script src="script/gifOS.js"> </script>
+<script src="script/giphy.js"> </script>
+<script src="script/subirgif.js"> </script>
+<script>
+    const instrucciones = document.getElementById("instrucciones");
+    const grabargif     = document.getElementById("grabargif");
+    const subirgif      = document.getElementById("subirgif");
+    
+    document.getElementById("boton_gifcancelar").onclick = function() { volver(); };
+    document.getElementById("boton_gifcomenzar").onclick = function() { cambiarPaso(1); };
+    
+    document.getElementById("boton_subidacancelar").onclick = function() { cambiarPaso(0); };
+    
+    const boton_gif1    = document.getElementById("boton_gif1");
+    const boton_gif2    = document.getElementById("boton_gif2");
+    const boton_gif3    = document.getElementById("boton_gif3");
+
+    cambiarPaso(0);
+
+    getRandomID(() => {
+        getGifs(uploadedGifs, fillMyGifs);
+    });
+
+    function cambiarPaso(i)
+    {
+        switch (i)
+        {
+            case 0:
+                instrucciones.style.display = "block";
+                grabargif    .style.display = "none";
+                subirgif     .style.display = "none";
+                break;
+            case 1:
+                instrucciones.style.display = "none";
+                grabargif    .style.display = "block";
+                subirgif     .style.display = "none";
+
+                boton_gif1.style.display = "none";
+                boton_gif2.style.display = "none";
+                boton_gif3.style.display = "flex";
+
+                boton_gif3.innerText = "Capturar";
+                boton_gif3.onclick = function() { grabarVideo(); cambiarPaso(2); };
+                break;
+            case 2:
+                boton_gif1.style.display = "none";
+                boton_gif2.style.display = "none";
+
+                liveVideo.hidden = false;
+                gifImg.hidden    = true;
+
+                boton_gif3.innerText = "Listo";
+                boton_gif3.onclick = function() { detenerGrabacion(); cambiarPaso(3); };
+                break;
+            case 3:
+                boton_gif1.style.display = "none";
+                boton_gif2.style.display = "flex";
+                boton_gif3.style.display = "flex";
+
+                liveVideo.hidden = true;
+                gifImg.hidden    = false;
+
+                /*boton_gif1.innerText = "Play";
+                boton_gif1.onclick = function() { reproducirVideoGrabado(); };*/
+                boton_gif2.innerText = "Repetir captura";
+                boton_gif2.onclick = function() { grabarVideo(); cambiarPaso(2); };
+                boton_gif3.innerText = "Subir";
+                boton_gif3.onclick = function() { subirGif(); cambiarPaso(4); };
+                break;
+            case 4:
+                instrucciones.style.display = "none";
+                grabargif    .style.display = "none";
+                subirgif     .style.display = "block";
+
+                break;
+            case 5:
+                instrucciones.style.display = "none";
+                grabargif    .style.display = "block";
+                subirgif     .style.display = "none";
+
+                boton_gif1.style.display = "flex";
+                boton_gif2.style.display = "flex";
+                boton_gif3.style.display = "flex";
+
+                liveVideo.hidden = true;
+                gifImg.hidden    = false;
+
+                boton_gif1.innerText = "Copiar Enlace";
+                boton_gif1.onclick = function() { copyGiphyUrl(uploadedGifs[uploadedGifs.length - 1].id); };
+                boton_gif2.innerText = "Descargar";
+                boton_gif2.onclick = function() { downloadGif(uploadedUrl); };
+                boton_gif3.innerText = "Listo";
+                boton_gif3.onclick = function() { volver(); };
+                break;
+        }
+    }
+
+    function copyGiphyUrl(id)
+    {
+        let url = API_URL + 'gifs/' + id + API_KEY;
+
+        if(random_id != null)
+            url += '&random_id=' + random_id;
+
+        fetch(url)
+        .then((response) => {
+            return response.json();
+        })
+        .then(blob => {
+            console.log('GYPHYURL BLOB:');
+            console.log(blob);
+
+            var dummy = document.createElement("textarea");
+            
+            document.body.appendChild(dummy);
+            
+            dummy.value = blob.data.url;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+
+            alert('Giphy URL copied!: ' + blob.data.url);
+        })
+        .catch((error) => {
+            console.error(error);
+            return error;
+        });
+    }
+
+    function downloadGif(url)
+    {
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = true;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    function volver()
+    {
+        window.location.href = 'index.html';
+    }
+</script>
+
+</body>
+</html>
